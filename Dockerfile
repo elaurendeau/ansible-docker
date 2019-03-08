@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
+FROM centos:7
 
-RUN apt-get update && apt-get install -y --no-install-recommends software-properties-common && apt-add-repository --yes ppa:ansible/ansible && apt-get install -y --no-install-recommends ansible && rm -rf /var/lib/apt/lists/*
+RUN yum -y update && yum -y install epel-release && yum -y install ansible && yum clean all
 
 WORKDIR /ansiblefiles
